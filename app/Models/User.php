@@ -21,6 +21,8 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'role_id',
+        'manager_id'
     ];
 
     /**
@@ -44,5 +46,35 @@ class User extends Authenticatable
             'email_verified_at' => 'datetime',
             'password' => 'hashed',
         ];
+    }
+
+    public function role()
+    {
+        return $this->belongsTo(Role::class);
+    }
+
+    public function posts()
+    {
+        return $this->hasMany(Post::class);
+    }
+
+    public function manager()
+    {
+        return $this->belongsTo(User::class, 'manager_id');
+    }
+
+    public function employees()
+    {
+        return $this->hasMany(User::class, 'manager_id');
+    }
+
+    public function isManager()
+    {
+        return $this->role->name === 'manager';
+    }
+
+    public function isEmployee()
+    {
+        return $this->role->name === 'employee';
     }
 }
