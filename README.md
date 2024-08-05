@@ -17,3 +17,42 @@
 Таблиці для бази даних повинні створюватися за допомогою міграції.<br>
 Права доступу до методів створення користувачів і записів повинні контролюватися через policy<br>
 Назви ролей - manager, employer. Таблицю записів необхідно назвати Posts.
+
+#### Приклад використання:
+```bash
+git clone https://github.com/andtravel/laravel-api-project.git
+
+cd simple-api
+```
+
+#### Приклад виконання:
+```bash
+composer install
+```
+Для Linux, MacOs
+```bash
+cp .env.example .env
+```
+Для Windows
+```bash
+copy .env.example .env
+```
+Згенерувати ключ, створити таблиці в базу даних та заповнити фейковими даними
+```bash
+php artisan key:generate
+php artisan migrate --seed
+```
+
+#### Приклад запуску:
+```bash
+php artisan serve
+```
+
+#### Приклад запуску тестів:
+```bash
+php artisan test
+```
+
+#### Приклад використання API документації:
+
+Перейти за посиланням [http://localhost:8000/api/documentation](http://localhost:8000/api/documentation)
