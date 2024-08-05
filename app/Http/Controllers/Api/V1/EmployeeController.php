@@ -11,11 +11,7 @@ use Illuminate\Support\Facades\Hash;
 
 class EmployeeController extends Controller
 {
-   /* public function index()
-    {
-        $employees = User::where('manager_id', Auth::user()->id)->get();
-        return response()->json($employees);
-    }*/
+
     public function store(StoreEmployeeRequest $request)
     {
         Gate::authorize('create', User::class);
