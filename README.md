@@ -22,7 +22,7 @@
 ```bash
 git clone https://github.com/andtravel/laravel-api-project.git
 
-cd simple-api
+cd laravel-api-project
 ```
 
 #### Приклад виконання:
@@ -37,6 +37,8 @@ cp .env.example .env
 ```bash
 copy .env.example .env
 ```
+Налаштувати використання базой даних
+
 Згенерувати ключ, створити таблиці в базу даних та заповнити фейковими даними
 ```bash
 php artisan key:generate
@@ -46,11 +48,6 @@ php artisan migrate --seed
 #### Приклад запуску:
 ```bash
 php artisan serve
-```
-
-#### Приклад запуску тестів:
-```bash
-php artisan test
 ```
 
 #### Приклад використання API документації:
